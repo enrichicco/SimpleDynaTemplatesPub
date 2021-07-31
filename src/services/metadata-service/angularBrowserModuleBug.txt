@@ -1,0 +1,24 @@
+problem:
+
+the Meta service, available in
+
+@angular/platform-browser
+
+does not work well on the following attributes
+
+- http-equiv
+- charset
+
+for instance, the tag replace method
+
+.... some code ...
+metaInstance.updateMeta(tagdefinition)
+.... some code ...
+
+uses a selecor function which tests for metas tag only with the following attributes:
+
+- content
+- name
+
+so, when searching for an http-equiv or charset meta, it does not find anything.
+The tag then is properly added, but the former one is not removed, giving place to duplicates, possibly different one from the other

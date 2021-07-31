@@ -1,0 +1,17 @@
+<p>dynamic-template-via-factory works!</p>
+
+<p>you will find hereunder the dynamic component with the dynamically selected template</p>
+
+<!-- -->
+<jit-component-selector [viewPorts]="viewPorts" (createComponent)="addToViewport($event)"></jit-component-selector>
+
+<ng-container #componentRef1></ng-container>
+
+
+<table class="viewPort">
+  <tr *ngFor="let port of viewPorts">
+    <td>View Port #{{port}}</td>
+    <td><ng-template #componentTarget ></ng-template></td>
+  </tr>
+
+</table>

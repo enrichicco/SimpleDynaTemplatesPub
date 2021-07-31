@@ -1,0 +1,13 @@
+<div style="display: inline-block; white-space: nowrap">
+  <h2 style="white-space: nowrap">Boilerplate Home Component</h2>
+</div>
+
+<button type="button" routerLink='angularAds'> angularAds</button>&nbsp;
+<button type="button" routerLink='dynaComponentsTest'> dynamic components test</button>&nbsp;
+<div *ngIf="headerEnabler">
+  <p><span class="content">ng12 sophisticated boilerplate is running!</span></p>
+  <br/><br/><br/><br/>
+  <div style="padding: 10px 10px 10px 10px;">
+    <app-boiler-plate-main-navbar [lUrl]="theLUrl"></app-boiler-plate-main-navbar>
+  </div>
+</div>

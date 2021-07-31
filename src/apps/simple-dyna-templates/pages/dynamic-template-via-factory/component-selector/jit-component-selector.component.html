@@ -1,0 +1,66 @@
+<span>component-selector works!</span>
+<br/><br/>
+
+<div style="border: solid 2px; border-style: groove; border-radius: 15px; padding: 10px 20px 10px 20px;">
+  <form>
+    <div style="border: solid 1px; border-style: groove; border-radius: 15px; padding: 10px 20px 10px 20px;">
+      <label for="contextType">Context Color&nbsp;&nbsp;</label>
+      <select style="background-color: aqua;" id="contextType" name="contextType" [(ngModel)]="contextType">
+        <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
+        <option value="success">Success</option>
+        <option value="warning">Warning</option>
+        <option value="danger">Danger</option>
+      </select><br/>
+      <label for="viewPortsNumber">Number of View Ports&nbsp;&nbsp;</label>
+      <input type="number" name="viewPortsNumber" id="chooseNumOfViewPorts" value="4" [(ngModel)]="viewPortsNumber">
+
+    </div><br/>
+    <div style="border: solid 1px; border-style: groove; border-radius: 15px; padding: 10px 20px 10px 20px;">
+      <label>Component Type</label>
+      <div >
+        <input type="radio" name="componentType" id="buttonSelect" value="button_00" [(ngModel)]="componentType">
+        <label for="buttonSelect">Button</label>
+      </div>
+      <div >
+        <input type="radio" name="componentType" id="alertSelect" value="label_00" [(ngModel)]="componentType">
+        <label for="alertSelect">Alert</label>
+      </div>
+
+      <div >
+        <input type="radio" name="componentType" id="staticHtml_XX_lazy" value="staticHtml_XX_lazy" [(ngModel)]="componentType">
+        <label for="staticHtml_XX_lazy">Static template, lazyloaded module and component</label><br/>
+        <select style="background-color: aqua;" id="lazyCompId" name="lazyCompId" [(ngModel)]="lazyCompId">
+          <option value="1">comp-one</option>
+          <option value="2">comp-two</option>
+          <option value="3">comp-three</option>
+          <option value="4">comp-four</option>
+          <option value="-1">error component</option>
+        </select>
+      </div>
+
+      <div >
+        <input type="radio" name="componentType" id="htmlInTextAreaSelect1" value="dynaHtml_01" [(ngModel)]="componentType">
+        <label for="htmlInTextAreaSelect1">Html in text area here under, NO wrapper component</label><br/>
+      </div>
+      <div >
+        <input type="radio" name="componentType" id="htmlInTextAreaSelect2_lazy" value="dynaHtml_02_Lazy" [(ngModel)]="componentType">
+        <label for="htmlInTextAreaSelect2_lazy">Html in text area here under, WITH wrapper component</label><br/>
+      </div>
+      <div>
+        <textarea [(ngModel)]="dynamicHtml" name="componentHtml" cols="30" rows="6"></textarea>
+      </div>
+
+  </div><br/>
+    <div style="border: solid 1px; border-style: groove; border-radius: 15px; padding: 10px 20px 10px 20px;">
+      <label>View Port</label>
+      <div *ngFor="let port of viewPorts; let i = index">
+        <input type="radio" name="viewPort" [id]="'viewPort' + port" [value]="i" [(ngModel)]="viewPortSelected"/>
+        <label [for]="'viewPort' + port">viewport {{port}}</label>
+      </div>
+    </div><br/>
+    <div >
+      <button class="btn btn-primary" (click)="createRequest()">Create Component</button>
+    </div>
+  </form>
+</div>

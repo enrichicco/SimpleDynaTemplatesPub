@@ -1,0 +1,15 @@
+/*textarea {
+  position: fixed;
+  left:10px; top:10px;
+  width:  calc(100vw - 20px);      
+  height: calc(100vh - 20px);
+  resize: none;
+}*//* calc and viewport to the rescue */
+
+textarea {
+  width: 100%; 
+  height: 100%; 
+  box-sizing: border-box; 
+  border: 1px solid #FF0000; 
+  resize:none;
+}

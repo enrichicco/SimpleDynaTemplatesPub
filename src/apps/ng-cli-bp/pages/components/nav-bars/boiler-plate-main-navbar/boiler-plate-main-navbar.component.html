@@ -1,0 +1,8 @@
+<div style="border:4px; border-style:solid;  border-radius: 25px; background-color: gray; padding: 10px 20px 10px 20px;">
+  <span style="color:beige">Main grid static nav buttons</span><br/><br/>
+  <ng-container *ngFor="let theRoute of routesArray">
+    <app-boiler-plate-main-navbar-button001 [routerLink]="theRoute.link" [routerLinkDesc]="theRoute.label"></app-boiler-plate-main-navbar-button001>
+  </ng-container>
+  <br/><br/>
+  <app-boiler-plate-main-navbar-route-echo001 [routerUrl]="lUrl"></app-boiler-plate-main-navbar-route-echo001>
+</div>
