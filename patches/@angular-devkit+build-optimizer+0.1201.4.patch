@@ -1,0 +1,25 @@
+diff --git a/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/build-optimizer.js b/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/build-optimizer.js
+index b6be471..58d97c3 100644
+--- a/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/build-optimizer.js
++++ b/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/build-optimizer.js
+@@ -16,6 +16,9 @@ const scrub_file_1 = require("../transforms/scrub-file");
+ const wrap_enums_1 = require("../transforms/wrap-enums");
+ // Angular packages are known to have no side effects.
+ const knownSideEffectFreeAngularModules = [
++//
++//      mod 2 - 20210731: for optimizer flag working in production (only in angular 11.x at the moment)
++/*
+     /[\\/]node_modules[\\/]@angular[\\/]animations[\\/]/,
+     /[\\/]node_modules[\\/]@angular[\\/]common[\\/]/,
+     /[\\/]node_modules[\\/]@angular[\\/]compiler[\\/]/,
+@@ -31,6 +34,10 @@ const knownSideEffectFreeAngularModules = [
+     /[\\/]node_modules[\\/]@angular[\\/]material[\\/]/,
+     /[\\/]node_modules[\\/]@angular[\\/]cdk[\\/]/,
+     /[\\/]node_modules[\\/]rxjs[\\/]/, 
++  */
++//
++//   end of mod 2
++//
+ ];
+ // Known locations for the source files of @angular/core.
+ const coreFilesRegex = /[\\/]node_modules[\\/]@angular[\\/]core[\\/][f]?esm2015[\\/]/;

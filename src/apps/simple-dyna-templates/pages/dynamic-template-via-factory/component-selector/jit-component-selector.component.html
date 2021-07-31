@@ -20,11 +20,11 @@
       <label>Component Type</label>
       <div >
         <input type="radio" name="componentType" id="buttonSelect" value="button_00" [(ngModel)]="componentType">
-        <label for="buttonSelect">Button</label>
+        <label for="buttonSelect">Button, eager</label>
       </div>
       <div >
         <input type="radio" name="componentType" id="alertSelect" value="label_00" [(ngModel)]="componentType">
-        <label for="alertSelect">Alert</label>
+        <label for="alertSelect">Alert, eager</label>
       </div>
 
       <div >
@@ -41,11 +41,11 @@
 
       <div >
         <input type="radio" name="componentType" id="htmlInTextAreaSelect1" value="dynaHtml_01" [(ngModel)]="componentType">
-        <label for="htmlInTextAreaSelect1">Html in text area here under, NO wrapper component</label><br/>
+        <label for="htmlInTextAreaSelect1">Dyn Html in text area here under, NO wrapper component, eager</label><br/>
       </div>
       <div >
         <input type="radio" name="componentType" id="htmlInTextAreaSelect2_lazy" value="dynaHtml_02_Lazy" [(ngModel)]="componentType">
-        <label for="htmlInTextAreaSelect2_lazy">Html in text area here under, WITH wrapper component</label><br/>
+        <label for="htmlInTextAreaSelect2_lazy">Dyn Html in text area here under, WITH wrapper component, lazy</label><br/>
       </div>
       <div>
         <textarea [(ngModel)]="dynamicHtml" name="componentHtml" cols="30" rows="6"></textarea>

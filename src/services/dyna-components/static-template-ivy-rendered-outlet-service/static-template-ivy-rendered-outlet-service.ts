@@ -152,33 +152,39 @@ export class StaticTemplateIvyRenderedOutletService {
     const wrappingPromise = new Promise<ComponentRef<unknown>>((resolve,reject) => {
       // get modules and component containers
       const theModule: ModuleRefDefinition | undefined = this.lazyFiles.getModuleRef(moduleName);
-      const theComponent: ComponentRefDefinition | undefined = this.lazyFiles.getComponentRef(compName);
-      if (!!theModule && !!theComponent) {
-        const promMod = this.lazyCache.resolveModuleObj(theModule);
-        const promComp = this.lazyCache.resolveComponentObj(theComponent);
-        Promise.all([promMod, promComp])
-        .then( items => {
-          const stpOne: Promise<any> = this._buildComponentWithModule(compName, moduleName)
-          .then((componentFactoryContainer: any)  => {
-              const ref: ComponentRef<unknown> = viewRef.createComponent(componentFactoryContainer.componentFactory, generatedResourceId, componentFactoryContainer.moduleRef.injector);
-              resolve(ref);
-            }        
-          )
-          .catch(error => {
-            console.log("lazy loader failed on level 2 with error", error);
-            reject(error);
+      if (!!theModule) {
+        const theComponent: ComponentRefDefinition | undefined = this.lazyFiles.getComponentRef(compName) || this.lazyFiles.getComponentRef("dynamicContentOutletErrorComponent");
+        if (!!theComponent) {
+          const promMod = this.lazyCache.resolveModuleObj(theModule);
+          const promComp = this.lazyCache.resolveComponentObj(theComponent);
+          Promise.all([promMod, promComp])
+          .then( items => {
+            const stpOne: Promise<any> = this._buildComponentWithModule(compName, moduleName)
+            .then((componentFactoryContainer: any)  => {
+                const ref: ComponentRef<unknown> = viewRef.createComponent(componentFactoryContainer.componentFactory, generatedResourceId, componentFactoryContainer.moduleRef.injector);
+                resolve(ref);
+              }        
+            )
+            .catch(error => {
+              console.log("lazy loader failed on level 2 with error", error);
+              reject(error);
+            })
           })
-        })
-        .catch(error => {
-          console.log("lazy loader failed on level 1 with error", error);
-          reject(error)
-        });
-
+          .catch(error => {
+            console.log("lazy loader failed on level 1 with error", error);
+            reject(error)
+          });
+  
+        } else {
+          console.log("TODO:manage component badly not found error");
+          reject("TODO:manage component badly not found error");
+        }
+  
       } else {
-        console.log("TODO:manage component not found error");
-        reject("TODO:manage component not found error");
+        console.log("TODO:manage module badly not found error");
+        reject("TODO:manage module badly not found error");
       }
-    });
+  });
     return wrappingPromise;
   }
 

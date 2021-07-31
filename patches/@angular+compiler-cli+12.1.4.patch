@@ -1,0 +1,19 @@
+diff --git a/node_modules/@angular/compiler-cli/src/tooling.js b/node_modules/@angular/compiler-cli/src/tooling.js
+index 739792d..20a3f29 100755
+--- a/node_modules/@angular/compiler-cli/src/tooling.js
++++ b/node_modules/@angular/compiler-cli/src/tooling.js
+@@ -28,7 +28,13 @@
+         ngDevMode: false,
+         ngI18nClosureMode: false,
+     };
+-    exports.GLOBAL_DEFS_FOR_TERSER_WITH_AOT = tslib_1.__assign(tslib_1.__assign({}, exports.GLOBAL_DEFS_FOR_TERSER), { ngJitMode: false });
++    //
++    //      mod 1 - 20210731: for optimization flag working in production
++    //    exports.GLOBAL_DEFS_FOR_TERSER_WITH_AOT = tslib_1.__assign(tslib_1.__assign({}, exports.GLOBAL_DEFS_FOR_TERSER), { ngJitMode: false });
++    exports.GLOBAL_DEFS_FOR_TERSER_WITH_AOT = tslib_1.__assign(tslib_1.__assign({}, exports.GLOBAL_DEFS_FOR_TERSER), { ngJitMode: true });
++    //
++    //      mod 1 end
++    //
+     /**
+      * Transform for downleveling Angular decorators and Angular-decorated class constructor
+      * parameters for dependency injection. This transform can be used by the CLI for JIT-mode

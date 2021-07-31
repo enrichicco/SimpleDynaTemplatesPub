@@ -1,3 +1,4 @@
 export interface DynamicHtmlTemplateWrapperIvyRendered{
-  extHtmlTemplate: string
+  extHtmlTemplate: string,
+  buildSubcomponent(htmlTemplate: string) : void
 }

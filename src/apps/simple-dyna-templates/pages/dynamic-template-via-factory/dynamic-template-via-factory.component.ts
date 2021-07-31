@@ -1,6 +1,7 @@
 import { Component, ComponentFactory, ComponentRef, EventEmitter, OnInit, Output, QueryList, ViewChild, ViewChildren, ViewContainerRef, ViewRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DynamicComponentService, Twins } from 'src/services/dyna-components/dynamic-component-service/dynamic-component.service';
+import { Twins } from 'src/services/dyna-components/components-factories-cache-service/components-factories-cache-types';
+import { DynamicComponentsFactoriesAndModulesCacheService } from 'src/services/dyna-components/components-factories-cache-service/components-factories-cache.service';
 import { DynamicHtmlTemplateWrapperIvyRendered } from 'src/services/dyna-components/dynamic-template-ivy-rendered-outlet-service/dynamic-template-component-wrapper-interface';
 import { DynamicTemplateIvyRenderedOutletService } from 'src/services/dyna-components/dynamic-template-ivy-rendered-outlet-service/dynamic-template-ivy-rendered-outlet-service';
 import { StaticTemplateIvyRenderedOutletService } from 'src/services/dyna-components/static-template-ivy-rendered-outlet-service/static-template-ivy-rendered-outlet-service';
@@ -18,15 +19,8 @@ import { ComponentRequest } from './component-selector/jit-component-selector.co
 })
 export class DynamicTemplateViaFactoryComponent implements OnInit {
 
-
-
-  // block 1: just one dynamic component
-  // dynamicComponent: any;
-  // @ViewChild('componentRef1', { read: ViewContainerRef, static: true }) _dynaCompPositionViewRef!: ViewContainerRef;
-  // @ViewRef('componentRef1', {}) dynaCompPositionViewRef : ViewRef;
-
-
-  // block 2: dynamic components set
+  //
+  // dynamic components set
   compToDisplay: string = '';
 	public viewPorts: number[] = [1, 2, 3, 4];
   public viewPortSelected: number = 0;
@@ -40,11 +34,11 @@ export class DynamicTemplateViaFactoryComponent implements OnInit {
 
   constructor(
     private jitTemplateService: DynamicTemplateIvyRenderedOutletService,
-    private dynaComponentFactory: DynamicComponentService,
+    private componentFactoriesCacheService: DynamicComponentsFactoriesAndModulesCacheService,
     private dynamicContentOutletServiceNew: StaticTemplateIvyRenderedOutletService
   ) {
     
-    this.dynaComponentFactory.loadFactories(...this.itemsForService());
+    this.componentFactoriesCacheService.loadFactories(...this.itemsForService());
   } 
   private itemsForService(): Twins<any>[]{
     return [
@@ -97,7 +91,7 @@ export class DynamicTemplateViaFactoryComponent implements OnInit {
       switch(request.componentType) {
         case 'button_00':
         case 'label_00': {
-            const factory = this.dynaComponentFactory.getFactory(request.componentType);
+            const factory = this.componentFactoriesCacheService.getComponentFactory(request.componentType);
             if (factory) {
               this.putComponentInSelectedViewPort(request, factory);
             }

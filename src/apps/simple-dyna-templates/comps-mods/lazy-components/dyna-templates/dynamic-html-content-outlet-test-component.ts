@@ -29,12 +29,15 @@ export class DynamicHtmlContentOutletTestComponent implements OnInit , DynamicHt
   }
 
   ngOnInit(){
-    const _template: string = `<p>this dynamic html component relies on lazy loaded component</p>\n`;
+  }
+  public buildSubcomponent(htmlTemplate: string) {
+    const _template: string = htmlTemplate || `<p>this dynamic html component relies on lazy loaded component</p>\n`;
     let subComponent = this.createSubComponent(_template);
     const generatorPromyResult = this.jitTemplateService.generateDynamicAndPut(this._elementRef, subComponent)
     .then(result => {
       this.dynamicComponent = result && result.bStatus ? result.componentRef : undefined;
     });
+
   }
   private createSubComponent(_template: string) {
     const _subcomponent = Component({

@@ -128,6 +128,8 @@ export class LazyCacheService {
 
 
   //
+  // ==================================================================================================
+  //
   // get object from modules/components/factories cache
   // put the module/component in cache if not present
   private resolveNgObj(ngObjRef: ModuleRefDefinition | ComponentRefDefinition,  collection: NgObjectsRefContainer<ModuleRefDefinition | ComponentRefDefinition>): Promise<any> {

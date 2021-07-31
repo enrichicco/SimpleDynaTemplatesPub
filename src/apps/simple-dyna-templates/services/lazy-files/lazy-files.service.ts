@@ -75,6 +75,19 @@ export class LazyFilesService {
   public getComponents() {
     const pappa: ComponentRefDefinition[] = [
       {
+        dynamicNgObj: import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-error.component') // .then(m => m.DynamicContentOutletTest3Component)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletErrorComponent"
+        , ngObjOriginalType: "DynamicContentOutletErrorComponent"
+        , ngObjBaseType: "NgComponent"
+        , isReady: false
+        , bindingFunction: function(m: any) { 
+          return m.DynamicContentOutletErrorComponent;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
         dynamicNgObj: import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test1.component') // .then(m => m.DynamicContentOutletTest3Component)
         , solvedNgObj: null
         , solvedFactory: null
