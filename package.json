@@ -8,11 +8,15 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "wba-bundle-report-client": "webpack-bundle-analyzer --port 4200 dist/minimTest/browser/stats.json", 
-    "wba-bundle-report-server": "webpack-bundle-analyzer --port 4200 dist/minimTest/server/stats.json", 
+    "wba-bundle-report-client": "webpack-bundle-analyzer --port 4200 dist/minimTest/browser/stats.json",
+    "wba-bundle-report-server": "webpack-bundle-analyzer --port 4200 dist/minimTest/server/stats.json",
     "compodoc": "npx compodoc -p tsconfig.doc.json",
     "buildCompoDocs": "compodoc",
-    "serveCompodocs": "compodoc -s"
+    "serveCompodocs": "compodoc -s",
+    "dev:ssr": "ng run simpleDynaTemplates:serve-ssr",
+    "serve:ssr": "node dist/simpleDynaTemplates/server/main.js",
+    "build:ssr": "ng build && ng run simpleDynaTemplates:server",
+    "prerender": "ng run simpleDynaTemplates:prerender"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +27,10 @@
     "@angular/forms": "~12.1.1",
     "@angular/platform-browser": "~12.1.1",
     "@angular/platform-browser-dynamic": "~12.1.1",
+    "@angular/platform-server": "~12.1.1",
     "@angular/router": "~12.1.1",
+    "@nguniversal/express-engine": "^12.1.0",
+    "express": "^4.15.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -32,6 +39,8 @@
     "@angular-devkit/build-angular": "~12.1.1",
     "@angular/cli": "~12.1.1",
     "@angular/compiler-cli": "~12.1.1",
+    "@nguniversal/builders": "^12.1.0",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",

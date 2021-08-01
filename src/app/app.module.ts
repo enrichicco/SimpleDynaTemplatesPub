@@ -62,7 +62,7 @@ export function createCompiler(compilerFactory: CompilerFactory) {
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CommonModule, 
     FormsModule,
