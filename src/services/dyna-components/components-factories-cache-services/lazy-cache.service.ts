@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { LazyFilesService } from "../../apps/simple-dyna-templates/services/lazy-files/lazy-files.service";
-import { ComponentRefDefinition, ModuleRefDefinition, NgObjectsRefContainer, RegistryItem,  } from "./lazy-cache.types";
+import { LazyFilesService } from "../../../apps/simple-dyna-templates/services/lazy-files/lazy-files.service";
+import { ComponentRefDefinition, ModuleRefDefinition, NgObjectsRefContainer, RegistryItem,  } from "./types/lazy-cache.types";
 
 @Injectable({
   providedIn: 'root'

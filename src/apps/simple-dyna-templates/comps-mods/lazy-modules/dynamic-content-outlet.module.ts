@@ -7,7 +7,7 @@ import { DynamicContentOutletTest3Component } from '../lazy-components/static-te
 import { DynamicContentOutletTest4Component } from '../lazy-components/static-templates/dynamic-content-outlet-test4.component';
 // import { NgModuleWithComponentBuilder } from '../lazy-cache/lazy-cache.types';
 import { StaticTemplateIvyRenderedOutletService } from 'src/services/dyna-components/static-template-ivy-rendered-outlet-service/static-template-ivy-rendered-outlet-service';
-import { NgModuleWithComponentBuilder } from 'src/services/lazy-cache/lazy-cache.types';
+import { NgModuleWithComponentBuilder } from 'src/services/dyna-components/components-factories-cache-services/types/lazy-cache.types';
 import { DynamicHtmlContentOutletTestComponent } from '../lazy-components/dyna-templates/dynamic-html-content-outlet-test-component';
 
 

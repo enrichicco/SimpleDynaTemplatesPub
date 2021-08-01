@@ -1,13 +1,14 @@
 import { Component, ComponentFactory, ComponentRef, EventEmitter, OnInit, Output, QueryList, ViewChild, ViewChildren, ViewContainerRef, ViewRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Twins } from 'src/services/dyna-components/components-factories-cache-service/components-factories-cache-types';
-import { DynamicComponentsFactoriesAndModulesCacheService } from 'src/services/dyna-components/components-factories-cache-service/components-factories-cache.service';
-import { DynamicHtmlTemplateWrapperIvyRendered } from 'src/services/dyna-components/dynamic-template-ivy-rendered-outlet-service/dynamic-template-component-wrapper-interface';
+import { Twins } from 'src/services/dyna-components/components-factories-cache-services/types/components-factories-cache-types';
+import { DynamicComponentsFactoriesAndModulesCacheService } from 'src/services/dyna-components/components-factories-cache-services/components-factories-cache.service';
+import { DynamicHtmlTemplateWrapperIvyRendered } from 'src/services/dyna-components/components-factories-cache-services/types/dynamic-template-component-wrapper-interface';
 import { DynamicTemplateIvyRenderedOutletService } from 'src/services/dyna-components/dynamic-template-ivy-rendered-outlet-service/dynamic-template-ivy-rendered-outlet-service';
 import { StaticTemplateIvyRenderedOutletService } from 'src/services/dyna-components/static-template-ivy-rendered-outlet-service/static-template-ivy-rendered-outlet-service';
 import { DynaButtonComponent } from '../../comps-mods/eager-components/dyna-button/dyna-button.component';
 import { DynaLabelComponent } from '../../comps-mods/eager-components/dyna-label/dyna-label.component';
 import { ComponentRequest } from './component-selector/jit-component-selector.component';
+import { EagerFilesService } from '../../services/eager-files/eager-files.service';
 
 
 
@@ -35,23 +36,12 @@ export class DynamicTemplateViaFactoryComponent implements OnInit {
   constructor(
     private jitTemplateService: DynamicTemplateIvyRenderedOutletService,
     private componentFactoriesCacheService: DynamicComponentsFactoriesAndModulesCacheService,
-    private dynamicContentOutletServiceNew: StaticTemplateIvyRenderedOutletService
+    private dynamicContentOutletServiceNew: StaticTemplateIvyRenderedOutletService,
+    private eagerFilesService: EagerFilesService
   ) {
     
-    this.componentFactoriesCacheService.loadFactories(...this.itemsForService());
+    this.componentFactoriesCacheService.loadFactories(...this.eagerFilesService.itemsForCache());
   } 
-  private itemsForService(): Twins<any>[]{
-    return [
-      {
-        "name": "button_00"
-        , component: DynaButtonComponent
-      }, {
-        "name": "label_00"
-        , component: DynaLabelComponent
-      }
-      
-    ];
-  }
 
   ngOnInit(): void {
   }

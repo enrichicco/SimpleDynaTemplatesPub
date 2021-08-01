@@ -1,6 +1,6 @@
 import { createComponent } from "@angular/compiler/src/core";
 import { Component, EventEmitter, OnInit, Output, ViewChild, ViewContainerRef } from "@angular/core";
-import { DynamicHtmlTemplateWrapperIvyRendered } from "src/services/dyna-components/dynamic-template-ivy-rendered-outlet-service/dynamic-template-component-wrapper-interface";
+import { DynamicHtmlTemplateWrapperIvyRendered } from "src/services/dyna-components/components-factories-cache-services/types/dynamic-template-component-wrapper-interface";
 import { DynamicTemplateIvyRenderedOutletService } from "src/services/dyna-components/dynamic-template-ivy-rendered-outlet-service/dynamic-template-ivy-rendered-outlet-service";
 
 

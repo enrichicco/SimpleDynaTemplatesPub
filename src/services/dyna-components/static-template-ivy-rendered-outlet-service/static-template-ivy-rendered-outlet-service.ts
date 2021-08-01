@@ -57,8 +57,8 @@ import {
   ComponentFactory,
   ComponentRef
 } from '@angular/core';
-import { LazyCacheService } from '../../lazy-cache/lazy-cache.service';
-import { ComponentRefDefinition, ModuleRefDefinition, NgModuleWithComponentBuilder, NgObjectsRefContainer } from '../../lazy-cache/lazy-cache.types';
+import { LazyCacheService } from '../components-factories-cache-services/lazy-cache.service';
+import { ComponentRefDefinition, ModuleRefDefinition, NgModuleWithComponentBuilder, NgObjectsRefContainer } from '../components-factories-cache-services/types/lazy-cache.types';
 import { LazyFilesService } from '../../../apps/simple-dyna-templates/services/lazy-files/lazy-files.service';
 
 

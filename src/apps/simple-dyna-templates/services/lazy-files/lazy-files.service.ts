@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ComponentRefDefinition, ModuleRefDefinition, RegistryItem } from '../../../../services/lazy-cache/lazy-cache.types';
+import { ComponentRefDefinition, ModuleRefDefinition, RegistryItem } from '../../../../services/dyna-components/components-factories-cache-services/types/lazy-cache.types';
 // import { ComponentRefDefinition, ModuleRefDefinition } from '../ng-gtv8-new-ivy-ok/lazy-loader.service';
 
 @Injectable({

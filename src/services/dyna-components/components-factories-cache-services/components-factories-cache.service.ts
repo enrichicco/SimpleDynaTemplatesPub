@@ -10,7 +10,7 @@
 
 
 import { ComponentFactory, ComponentFactoryResolver, Injectable, Type } from '@angular/core';
-import { ComponentCaster, ComponentClass, Twins } from './components-factories-cache-types';
+import { ComponentCaster, ComponentClass, Twins } from './types/components-factories-cache-types';
 
 
 
