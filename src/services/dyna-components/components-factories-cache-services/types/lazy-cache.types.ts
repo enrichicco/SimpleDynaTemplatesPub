@@ -1,8 +1,5 @@
 import { ComponentFactory, Type } from "@angular/core";
 
-type ModuleWithDynamicComponents = Type<any> & {
-  dynamicComponentsMap: {[key: string]: any};
-};
 
 type NgComponentBaseType = "NgModule" | "NgComponent";
 

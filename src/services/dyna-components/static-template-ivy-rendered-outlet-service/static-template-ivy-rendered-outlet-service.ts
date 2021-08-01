@@ -57,7 +57,7 @@ import {
   ComponentFactory,
   ComponentRef
 } from '@angular/core';
-import { LazyCacheService } from '../components-factories-cache-services/lazy-cache.service';
+import { LazyCompsCacheService } from '../components-factories-cache-services/lazy-comps-cache.service';
 import { ComponentRefDefinition, ModuleRefDefinition, NgModuleWithComponentBuilder, NgObjectsRefContainer } from '../components-factories-cache-services/types/lazy-cache.types';
 import { LazyFilesService } from '../../../apps/simple-dyna-templates/services/lazy-files/lazy-files.service';
 
@@ -74,7 +74,7 @@ export class StaticTemplateIvyRenderedOutletService {
     private injector: Injector,
     private _compiler:Compiler,
     private lazyFiles: LazyFilesService,
-    private lazyCache: LazyCacheService
+    private lazyCache: LazyCompsCacheService
   ) {
 
   }

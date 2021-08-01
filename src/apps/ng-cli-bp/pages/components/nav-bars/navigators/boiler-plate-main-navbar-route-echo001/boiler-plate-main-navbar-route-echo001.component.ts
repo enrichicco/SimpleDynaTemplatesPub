@@ -14,11 +14,9 @@ export class BoilerPlateMainNavbarRouteEcho001Component implements OnInit {
     this._routerUrl = value;
     this.buildValues();
   }
-  public translatedLabel: string | null;
   constructor() { 
     this.routerLabel = null;
     this._routerUrl = null
-    this.translatedLabel = null;
   }
 
   ngOnInit(): void {
@@ -26,19 +24,17 @@ export class BoilerPlateMainNavbarRouteEcho001Component implements OnInit {
   }
 
   buildValues(): void {
-    let unslashedUrl = this._routerUrl && this._routerUrl.charAt(0) === '/' ? this._routerUrl.substring(1) :  this._routerUrl ?? "__EMPTY__";
-    unslashedUrl = unslashedUrl === "" ? "/" : unslashedUrl;
-    this._routerUrl = this._routerUrl ?? "missing route or null route";
-    if (unslashedUrl === "/") {
-      this.routerLabel = (NavDefs.routesLabels["__SLASHONLY__"] || {}) ?? "no route detected";
+    if (this._routerUrl) {
+      let unslashedUrl = this._routerUrl.charAt(0) === '/' ? this._routerUrl.substring(1) :  this._routerUrl;
+      this.routerLabel = this.findInMap(NavDefs.navElements, this._routerUrl).label ?? "no route detected";
     } else {
-      if (unslashedUrl === "__EMPTY__") {
-        this.routerLabel = (NavDefs.routesLabels["__EMPTY__"] || {}) ?? "no route detected";
+      if (this._routerUrl === "") {
+        this._routerUrl = "__EMPTY__";
+        this.routerLabel = this.findInMap(NavDefs.navElements, "__EMPTY__").label ?? "empty route";
       } else {
-        this.routerLabel = this.findInMap(NavDefs.navElements, unslashedUrl).label ?? "no route detected";
+        this._routerUrl = "missing route or null route";
       }
     }
-    this.translatedLabel = NavDefs.routesLabels[this._routerUrl] ?? "unknown position";
 
   }
   private findInMap(theMap: any[], value: string){

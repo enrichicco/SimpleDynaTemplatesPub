@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DynamicComponentsFactoriesAndModulesCacheService } from './components-factories-cache.service';
+import { EagerCompsCacheService } from './eager-comps-cache.service';
 
 describe('DynamicComponentsFactoriesAndModulesCacheService', () => {
-  let service: DynamicComponentsFactoriesAndModulesCacheService;
+  let service: EagerCompsCacheService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DynamicComponentsFactoriesAndModulesCacheService);
+    service = TestBed.inject(EagerCompsCacheService);
   });
 
   it('should be created', () => {

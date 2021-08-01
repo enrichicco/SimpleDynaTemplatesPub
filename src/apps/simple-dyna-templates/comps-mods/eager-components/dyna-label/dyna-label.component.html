@@ -1,6 +1,8 @@
-<span class="alert d-flex align-items-center justify-content-between my-2 p-1" [ngClass]="getClass()">
-  {{created | date:'medium'}}
-  <button type="button" class="close" (click)="remove.emit()">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</span><br/>
+<div>
+  <span class="alert d-flex align-items-center justify-content-between my-2 p-1" [ngClass]="getClass()">
+    {{created | date:'medium'}}
+    <button type="button" class="close" (click)="remove.emit()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </span>
+</div>

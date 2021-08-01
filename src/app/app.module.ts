@@ -17,8 +17,6 @@ import { AngularAdsComponent } from 'src/apps/ng-cli-bp/pages/angular-ads/angula
 import { DynamicTemplateViaFactoryComponent } from 'src/apps/simple-dyna-templates/pages/dynamic-template-via-factory/dynamic-template-via-factory.component';
 
 
-import { DynaButtonComponent } from 'src/apps/simple-dyna-templates/comps-mods/eager-components/dyna-button/dyna-button.component';
-import { DynaLabelComponent } from 'src/apps/simple-dyna-templates/comps-mods/eager-components/dyna-label/dyna-label.component';
 import { JitComponentSelectorComponent } from 'src/apps/simple-dyna-templates/pages/dynamic-template-via-factory/component-selector/jit-component-selector.component';
 import { DesanitizerPipe } from 'src/filters/DesanitizerPipe';
 import { GenericCustomFilter } from 'src/filters/genericCustomFilter';
@@ -26,6 +24,7 @@ import { PageNotFoundComponent } from 'src/apps/ng-cli-bp/pages/page-not-found/p
 import { BoilerPlateMainNavbarComponent } from 'src/apps/ng-cli-bp/pages/components/nav-bars/boiler-plate-main-navbar/boiler-plate-main-navbar.component';
 import { BoilerPlateMainNavbarButton001Component } from 'src/apps/ng-cli-bp/pages/components/nav-bars/navigators/boiler-plate-main-navbar-button001/boiler-plate-main-navbar-button001.component';
 import { BoilerPlateMainNavbarRouteEcho001Component } from 'src/apps/ng-cli-bp/pages/components/nav-bars/navigators/boiler-plate-main-navbar-route-echo001/boiler-plate-main-navbar-route-echo001.component';
+import { EagerComponentsOutletModule } from 'src/apps/simple-dyna-templates/comps-mods/eager-modules/eager-components-outlet.module';
 
 
 //
@@ -57,8 +56,6 @@ export function createCompiler(compilerFactory: CompilerFactory) {
 
     // components
     BoilerPlateMainNavbarComponent,
-    DynaButtonComponent,
-    DynaLabelComponent,
     JitComponentSelectorComponent
 
 
@@ -69,6 +66,7 @@ export function createCompiler(compilerFactory: CompilerFactory) {
     AppRoutingModule,
     CommonModule, 
     FormsModule,
+    EagerComponentsOutletModule  
   ],
   providers: [
     IsBrowserIsNodeService

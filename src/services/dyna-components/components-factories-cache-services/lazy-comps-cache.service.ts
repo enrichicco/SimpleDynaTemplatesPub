@@ -5,7 +5,7 @@ import { ComponentRefDefinition, ModuleRefDefinition, NgObjectsRefContainer, Reg
 @Injectable({
   providedIn: 'root'
 })
-export class LazyCacheService {
+export class LazyCompsCacheService {
   constructor(
   ){
 

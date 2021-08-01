@@ -4,14 +4,32 @@ export const NavDefs: any = {
   }
   , navElements: [
     {
+      idName: "__EMPTY__"
+      , link: "__EMPTY__"
+      , label: "default page - home page - empty path"
+      , virtual: true
+      , enabled: true
+    },
+    {
+      idName: "__SLASHONLY__"
+      , link: "/"
+      , label: "/ - slash only"
+      , virtual: false
+      , enabled: true
+    },
+    {
       idName: "boilerplateHome"
-      , link: "boilerplateHome"
+      , link: "/boilerplateHome"
       , label: "boilerplate home"
+      , virtual: false
+      , enabled: true
     },
     {
       idName: "angularAds"
-      , link: "angularAds"
+      , link: "/angularAds"
       , label: "ads: Angular claims and demos"
+      , virtual: false
+      , enabled: true
     },
     //
     //
@@ -20,8 +38,10 @@ export const NavDefs: any = {
     //
     {
       idName: "dynaComponentsTest"
-      , link: "dynaComponentsTest"
+      , link: "/dynaComponentsTest"
       , label: "test dynamic components"
+      , virtual: false
+      , enabled: true
     },
     //
     //
@@ -32,31 +52,24 @@ export const NavDefs: any = {
       idName: "routesManager"
       , link: "routesManager"
       , label: "router manager interface"
+      , virtual: false
+      , enabled: false
     },
     {
       idName: "externalApp"
       , link: "externalApp"
       , label: "implemented application launcher"
+      , virtual: false
+      , enabled: false
     },
     {
       idName: "childRoutesTest"
       , link: "childRoutesTest"
       , label: "child routes (multiple router outlet) navigation test"
+      , virtual: false
+      , enabled: false
     },
 
   ]
-  , routesLabels: {
-    "__EMPTY__": "default page - home page"
-    , "__SLASHONLY__": "/ - slash only"
-    , "/": "home slash..."
-    , "/home": "home"
-    , "/routesManager": "routes Manager"
-    , "/angularAds": "angular Ads"
-    , "/dynaCompLight_InsideHtmlObjRef": "Dynamic template (statically compiled), insertion in html dom refpoint."
-    , "/dynaCompLight_Factory": "Dynamic template (statically compiled), insertion in html dom refpoint."
-    , "/dynaCompFull": "Dynamic Template, dynamically compiled"
-    , "/testChildRoutes": "test child (nested) routes, multiple router outlets"
-    , "/XXX": "YYYY"
-  }
 
 }

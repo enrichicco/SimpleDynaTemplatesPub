@@ -28,7 +28,17 @@ export class GenericCustomFilter implements PipeTransform {
       let filterKey: string = filterKeys[0];
       // filter items array, items which match and return true will be
       // kept, false will be filtered out
-      return items.filter((item: any) => item && item[filterKey] && item[filterKey].indexOf(filter[filterKey]) !== -1);
+      return items.filter((item: any) => {
+        const theResult: boolean = item 
+          && (item[filterKey] !== "undefined") // beware: necessary in this way when item[filterKey return a boolean false value (example: when it is a boolean type with false value...)]
+          && ((Array.isArray(item[filterKey])
+            ?
+          item[filterKey].indexOf(filter[filterKey]) !== -1
+          :
+          item[filterKey] === filter[filterKey]
+         ));
+        return theResult;
+      });
     }
   }
 }

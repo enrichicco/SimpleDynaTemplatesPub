@@ -18,7 +18,7 @@ import { ComponentCaster, ComponentClass, Twins } from './types/components-facto
 @Injectable({
   providedIn: 'root'
 })
-export class DynamicComponentsFactoriesAndModulesCacheService {
+export class EagerCompsCacheService {
 
   private compFactoryMap = new Map<string, ComponentCaster<any>>();
   //

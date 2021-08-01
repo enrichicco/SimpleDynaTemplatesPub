@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ComponentRefDefinition, ModuleRefDefinition, RegistryItem } from '../../../../services/dyna-components/components-factories-cache-services/types/lazy-cache.types';
-// import { ComponentRefDefinition, ModuleRefDefinition } from '../ng-gtv8-new-ivy-ok/lazy-loader.service';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +42,7 @@ export class LazyFilesService {
     const pippe: string = '../lazy-modules/dynamic-content-outlet.module';
     const pippa: ModuleRefDefinition[] = [
       {
-        dynamicNgObj: import('../../comps-mods/lazy-modules/dynamic-content-outlet.module') // .then(m => m.DynamicContentOutletModule1)
+        dynamicNgObj: import('../../comps-mods/lazy-modules/lazy-components-outlet.module') // .then(m => m.DynamicContentOutletModule1)
         , solvedNgObj: null
         , solvedFactory: null
         , ngObjOriginalName: "dynamicContentOutletModule1"
@@ -51,12 +50,12 @@ export class LazyFilesService {
         , ngObjBaseType: "NgModule"
         , isReady: false
         , bindingFunction: (m: any) => { 
-          return m.DynamicContentOutletModule1;
+          // return m.DynamicContentOutletModule1;
         }
         , bindingFunctionIsActive: false
       }
       , {
-        dynamicNgObj: import('../../comps-mods/lazy-modules/dynamic-content-outlet.module') // .then(m => m.DynamicContentOutletModule2)
+        dynamicNgObj: import('../../comps-mods/lazy-modules/lazy-components-outlet.module') // .then(m => m.DynamicContentOutletModule2)
         , solvedNgObj: null
         , solvedFactory: null
         , ngObjOriginalName: "dynamicContentOutletModule2"
@@ -64,7 +63,7 @@ export class LazyFilesService {
         , ngObjBaseType: "NgModule"
         , isReady: false
         , bindingFunction: (m: any) => { 
-          return m.DynamicContentOutletModule2;
+          // return m.DynamicContentOutletModule2;
         }
         , bindingFunctionIsActive: false
       }
@@ -83,7 +82,7 @@ export class LazyFilesService {
         , ngObjBaseType: "NgComponent"
         , isReady: false
         , bindingFunction: function(m: any) { 
-          return m.DynamicContentOutletErrorComponent;
+          // return m.DynamicContentOutletErrorComponent;
         }
         , bindingFunctionIsActive: false
       }
@@ -96,7 +95,7 @@ export class LazyFilesService {
         , ngObjBaseType: "NgComponent"
         , isReady: false
         , bindingFunction: function(m: any) { 
-          return m.DynamicContentOutletTest1Component;
+          // return m.DynamicContentOutletTest1Component;
         }
         , bindingFunctionIsActive: false
       }
@@ -109,7 +108,7 @@ export class LazyFilesService {
         , ngObjBaseType: "NgComponent"
         , isReady: false
         , bindingFunction: function(m: any) { 
-          return m.DynamicContentOutletTest2Component;
+          // return m.DynamicContentOutletTest2Component;
         }
         , bindingFunctionIsActive: false
       }
@@ -122,7 +121,7 @@ export class LazyFilesService {
         , ngObjBaseType: "NgComponent"
         , isReady: false
         , bindingFunction: function(m: any) { 
-          return m.DynamicContentOutletTest3Component;
+          // return m.DynamicContentOutletTest3Component;
         }
         , bindingFunctionIsActive: false
       }
@@ -135,7 +134,7 @@ export class LazyFilesService {
       , ngObjBaseType: "NgComponent"
       , isReady: false
       , bindingFunction: function(m:any) { 
-        return m.DynamicContentOutletTest4Component;
+        // return m.DynamicContentOutletTest4Component;
       }
       , bindingFunctionIsActive: false
       }
@@ -148,7 +147,7 @@ export class LazyFilesService {
         , ngObjBaseType: "NgComponent"
         , isReady: false
         , bindingFunction: function(m:any) { 
-          return m.DynamicContentOutletTest4Component;
+          // return m.DynamicContentOutletTest4Component;
         }
         , bindingFunctionIsActive: false
       }
