@@ -147,19 +147,23 @@ export class StaticTemplateIvyRenderedOutletService {
   }
 
   // cast dynamic component WITH accompanying module
-  public drawComponentWithModuleInViewRef( moduleName: string, compName: string, viewRef: ViewContainerRef, generatedResourceId = 0): Promise<ComponentRef<unknown>> {
+  public drawComponentWithModuleInViewRef( moduleName: string | null, defaultmmoduleName: string, compName: string, viewRef: ViewContainerRef, generatedResourceId = 0): Promise<ComponentRef<unknown>> {
     // build returned wrapping promise
+    if (moduleName === null) {
+      const componentDefs: ComponentRefDefinition = this.lazyFiles.getComponentRef(compName) as ComponentRefDefinition;
+      moduleName = (componentDefs || {}).ngObjNeededModule ?? defaultmmoduleName;
+    }
     const wrappingPromise = new Promise<ComponentRef<unknown>>((resolve,reject) => {
       // get modules and component containers
-      const theModule: ModuleRefDefinition | undefined = this.lazyFiles.getModuleRef(moduleName);
+      const theModule: ModuleRefDefinition | undefined = this.lazyFiles.getModuleRef(moduleName!);
       if (!!theModule) {
         const theComponent: ComponentRefDefinition | undefined = this.lazyFiles.getComponentRef(compName) || this.lazyFiles.getComponentRef("dynamicContentOutletErrorComponent");
         if (!!theComponent) {
-          const promMod = this.lazyCache.resolveModuleObj(theModule);
-          const promComp = this.lazyCache.resolveComponentObj(theComponent);
+          const promMod = this.lazyCache.resolveModuleObj(theModule)();
+          const promComp = this.lazyCache.resolveComponentObj(theComponent)();
           Promise.all([promMod, promComp])
           .then( items => {
-            const stpOne: Promise<any> = this._buildComponentWithModule(compName, moduleName)
+            const stpOne: Promise<any> = this._buildComponentWithModule(compName, moduleName!)
             .then((componentFactoryContainer: any)  => {
                 const ref: ComponentRef<unknown> = viewRef.createComponent(componentFactoryContainer.componentFactory, generatedResourceId, componentFactoryContainer.moduleRef.injector);
                 resolve(ref);

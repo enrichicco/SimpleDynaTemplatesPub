@@ -23,6 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "commonChunk": false,
             "outputPath": "dist/simpleDynaTemplates/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -40,7 +41,7 @@
           },
           "configurations": {
             "production": {
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",

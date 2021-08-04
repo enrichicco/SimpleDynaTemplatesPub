@@ -89,7 +89,7 @@ export class DynamicTemplateViaFactoryComponent implements OnInit {
             const compName: string = `dynamicContentOutletTest${xxx}Component`
             const target = this.getTargetViewPort(request);
             this.dynamicContentOutletServiceNew.drawComponentWithModuleInViewRef(
-              "dynamicContentOutletModule1", compName, target
+              null, "dynamicContentOutletModule01", compName, target
             )
             .then(cmpRef => this.activateDestroyer(cmpRef));
           }
@@ -107,7 +107,7 @@ ${request.dynamicHtml}
         case 'dynaHtml_02_Lazy': {
             const target = this.getTargetViewPort(request);
             const htmlTemplate = request.dynamicHtml;
-            this.dynamicContentOutletServiceNew.drawComponentWithModuleInViewRef("dynamicContentOutletModule1", "dynamicHtmlContentOutletTestComponent", target /*this._dynaCompPositionViewRef */)
+            this.dynamicContentOutletServiceNew.drawComponentWithModuleInViewRef(null, "dynamicContentOutletModule01", "dynamicHtmlContentOutletTestComponent", target /*this._dynaCompPositionViewRef */)
             .then(cmpRef => {
               this.activateDestroyer(cmpRef);
               (cmpRef.instance as DynamicHtmlTemplateWrapperIvyRendered).buildSubcomponent(htmlTemplate);

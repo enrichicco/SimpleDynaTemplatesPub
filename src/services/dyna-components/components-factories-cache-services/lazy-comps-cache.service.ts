@@ -105,7 +105,7 @@ export class LazyCompsCacheService {
   //
   private loadSingleNgObjInMap(ngObj:ModuleRefDefinition | ComponentRefDefinition, ngObjRefs: NgObjectsRefContainer<ModuleRefDefinition | ComponentRefDefinition>): Promise<any>{
     ngObjRefs.items.push(ngObj);
-    return ngObj.dynamicNgObj.then(m => {
+    return ngObj.dynamicNgObj().then(m => {
       if (ngObj.bindingFunctionIsActive) {
         ngObj.solvedNgObj = ngObj.bindingFunction(m); 
       } else {
@@ -132,24 +132,24 @@ export class LazyCompsCacheService {
   //
   // get object from modules/components/factories cache
   // put the module/component in cache if not present
-  private resolveNgObj(ngObjRef: ModuleRefDefinition | ComponentRefDefinition,  collection: NgObjectsRefContainer<ModuleRefDefinition | ComponentRefDefinition>): Promise<any> {
+  private resolveNgObj(ngObjRef: ModuleRefDefinition | ComponentRefDefinition,  collection: NgObjectsRefContainer<ModuleRefDefinition | ComponentRefDefinition>): () => Promise<any> {
     const theItem = this.getNgObjInMap(ngObjRef.ngObjOriginalName, collection);
     if (!theItem) {
-      return this.loadSingleNgObjInMap(ngObjRef, collection)
+      return () => this.loadSingleNgObjInMap(ngObjRef, collection)
     }
     if (theItem.isReady) {
-      const promValue = new Promise<any>((resolve,reject) => {
+      const promValue = () => new Promise<any>((resolve,reject) => {
         resolve(theItem.solvedNgObj);
       })
       return promValue;
     }
     return theItem.dynamicNgObj;
   }
-  public resolveModuleObj(ngObjRef: ModuleRefDefinition | ComponentRefDefinition): Promise<any> {
+  public resolveModuleObj(ngObjRef: ModuleRefDefinition | ComponentRefDefinition): () => Promise<any> {
     return this.resolveNgObj(ngObjRef,this.moduleRefs);
   }
 
-  public resolveComponentObj(ngObjRef: ModuleRefDefinition | ComponentRefDefinition): Promise<any>{
+  public resolveComponentObj(ngObjRef: ModuleRefDefinition | ComponentRefDefinition): () => Promise<any>{
     return this.resolveNgObj(ngObjRef,this.componentRefs);
     
   }

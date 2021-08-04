@@ -42,31 +42,141 @@ export class LazyFilesService {
     const pippe: string = '../lazy-modules/dynamic-content-outlet.module';
     const pippa: ModuleRefDefinition[] = [
       {
-        dynamicNgObj: import('../../comps-mods/lazy-modules/lazy-components-outlet.module') // .then(m => m.DynamicContentOutletModule1)
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet01.module') // .then(m => m.DynamicContentOutletModule01)
         , solvedNgObj: null
         , solvedFactory: null
-        , ngObjOriginalName: "dynamicContentOutletModule1"
-        , ngObjOriginalType: "DynamicContentOutletModule1"
+        , ngObjOriginalName: "dynamicContentOutletModule01"
+        , ngObjOriginalType: "DynamicContentOutletModule01"
         , ngObjBaseType: "NgModule"
         , isReady: false
         , bindingFunction: (m: any) => { 
-          // return m.DynamicContentOutletModule1;
+          // return m.DynamicContentOutletModule0
+          1;
         }
         , bindingFunctionIsActive: false
       }
       , {
-        dynamicNgObj: import('../../comps-mods/lazy-modules/lazy-components-outlet.module') // .then(m => m.DynamicContentOutletModule2)
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet01.module') // .then(m => m.DynamicContentOutletModule01b)
         , solvedNgObj: null
         , solvedFactory: null
-        , ngObjOriginalName: "dynamicContentOutletModule2"
-        , ngObjOriginalType: "DynamicContentOutletModule2"
+        , ngObjOriginalName: "dynamicContentOutletModule01b"
+        , ngObjOriginalType: "DynamicContentOutletModule01b"
         , ngObjBaseType: "NgModule"
         , isReady: false
         , bindingFunction: (m: any) => { 
-          // return m.DynamicContentOutletModule2;
+          // return m.DynamicContentOutletModule01b;
         }
         , bindingFunctionIsActive: false
       }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet02.module') // .then(m => m.DynamicContentOutletModule01)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletModule02"
+        , ngObjOriginalType: "DynamicContentOutletModule02"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule0
+          1;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet02.module') // .then(m => m.DynamicContentOutletModule01b)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletModule02b"
+        , ngObjOriginalType: "DynamicContentOutletModule02b"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule01b;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet03.module') // .then(m => m.DynamicContentOutletModule01)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletModule03"
+        , ngObjOriginalType: "DynamicContentOutletModule03"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule0
+          1;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet03.module') // .then(m => m.DynamicContentOutletModule01b)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletModule03b"
+        , ngObjOriginalType: "DynamicContentOutletModule03b"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule01b;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet04.module') // .then(m => m.DynamicContentOutletModule01)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletModule04"
+        , ngObjOriginalType: "DynamicContentOutletModule04"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule0
+          1;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet04.module') // .then(m => m.DynamicContentOutletModule01b)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletModule04b"
+        , ngObjOriginalType: "DynamicContentOutletModule04b"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule01b;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet-DynHtml.module') // .then(m => m.DynamicContentOutletModule01)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletDynHtmlModule"
+        , ngObjOriginalType: "DynamicContentOutletDynHtmlModule"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule0
+          1;
+        }
+        , bindingFunctionIsActive: false
+      }
+      , {
+        dynamicNgObj: () => import('../../comps-mods/lazy-modules/lazy-components-outlet-DynHtml.module') // .then(m => m.DynamicContentOutletModule01)
+        , solvedNgObj: null
+        , solvedFactory: null
+        , ngObjOriginalName: "dynamicContentOutletDynBiHtmlModule"
+        , ngObjOriginalType: "DynamicContentOutletDynBiHtmlModule"
+        , ngObjBaseType: "NgModule"
+        , isReady: false
+        , bindingFunction: (m: any) => { 
+          // return m.DynamicContentOutletModule01b;
+        }
+        , bindingFunctionIsActive: false
+      }
+
     
     ];
     return pippa;
@@ -74,9 +184,10 @@ export class LazyFilesService {
   public getComponents() {
     const pappa: ComponentRefDefinition[] = [
       {
-        dynamicNgObj: import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-error.component') // .then(m => m.DynamicContentOutletTest3Component)
+        dynamicNgObj: () => import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-error.component') // .then(m => m.DynamicContentOutletTest3Component)
         , solvedNgObj: null
         , solvedFactory: null
+        , ngObjNeededModule: "dynamicContentOutletErrorModule"
         , ngObjOriginalName: "dynamicContentOutletErrorComponent"
         , ngObjOriginalType: "DynamicContentOutletErrorComponent"
         , ngObjBaseType: "NgComponent"
@@ -87,9 +198,10 @@ export class LazyFilesService {
         , bindingFunctionIsActive: false
       }
       , {
-        dynamicNgObj: import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test1.component') // .then(m => m.DynamicContentOutletTest3Component)
+        dynamicNgObj: () => import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test1.component') // .then(m => m.DynamicContentOutletTest3Component)
         , solvedNgObj: null
         , solvedFactory: null
+        , ngObjNeededModule: "dynamicContentOutletModule01"
         , ngObjOriginalName: "dynamicContentOutletTest1Component"
         , ngObjOriginalType: "DynamicContentOutletTest1Component"
         , ngObjBaseType: "NgComponent"
@@ -100,9 +212,10 @@ export class LazyFilesService {
         , bindingFunctionIsActive: false
       }
       , {
-          dynamicNgObj: import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test2.component') // .then(m => m.DynamicContentOutletTest3Component)
+          dynamicNgObj: () => import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test2.component') // .then(m => m.DynamicContentOutletTest3Component)
         , solvedNgObj: null
         , solvedFactory: null
+        , ngObjNeededModule: "dynamicContentOutletModule02"
         , ngObjOriginalName: "dynamicContentOutletTest2Component"
         , ngObjOriginalType: "DynamicContentOutletTest2Component"
         , ngObjBaseType: "NgComponent"
@@ -113,9 +226,10 @@ export class LazyFilesService {
         , bindingFunctionIsActive: false
       }
       , {
-        dynamicNgObj: import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test3.component') // .then(m => m.DynamicContentOutletTest3Component)
+        dynamicNgObj: () => import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test3.component') // .then(m => m.DynamicContentOutletTest3Component)
         , solvedNgObj: null
         , solvedFactory: null
+        , ngObjNeededModule: "dynamicContentOutletModule03"
         , ngObjOriginalName: "dynamicContentOutletTest3Component"
         , ngObjOriginalType: "DynamicContentOutletTest3Component"
         , ngObjBaseType: "NgComponent"
@@ -126,9 +240,10 @@ export class LazyFilesService {
         , bindingFunctionIsActive: false
       }
       , {
-        dynamicNgObj: import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test4.component') // .then(m => m.DynamicContentOutletTest4Component)
+        dynamicNgObj: () => import('../../comps-mods/lazy-components/static-templates/dynamic-content-outlet-test4.component') // .then(m => m.DynamicContentOutletTest4Component)
       , solvedNgObj: null
       , solvedFactory: null
+      , ngObjNeededModule: "dynamicContentOutletModule04"
       , ngObjOriginalName: "dynamicContentOutletTest4Component"
       , ngObjOriginalType: "DynamicContentOutletTest4Component"
       , ngObjBaseType: "NgComponent"
@@ -139,9 +254,10 @@ export class LazyFilesService {
       , bindingFunctionIsActive: false
       }
       , {
-          dynamicNgObj: import('../../comps-mods/lazy-components/dyna-templates/dynamic-html-content-outlet-test-component') // .then(m => m.DynamicContentOutletTest4Component)
+          dynamicNgObj: () => import('../../comps-mods/lazy-components/dyna-templates/dynamic-html-content-outlet-test-component') // .then(m => m.DynamicContentOutletTest4Component)
         , solvedNgObj: null
         , solvedFactory: null
+        , ngObjNeededModule: "dynamicContentOutletDynHtmlModule"
         , ngObjOriginalName: "dynamicHtmlContentOutletTestComponent"
         , ngObjOriginalType: "DynamicHtmlContentOutletTestComponent"
         , ngObjBaseType: "NgComponent"

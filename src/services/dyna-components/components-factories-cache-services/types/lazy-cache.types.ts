@@ -15,9 +15,10 @@ export interface NgObjectsRefContainer<T extends ModuleRefDefinition | Component
 
 
 export interface ComponentRefDefinition{
-  dynamicNgObj: Promise<any>
+  dynamicNgObj: () => Promise<any>
   , solvedNgObj: any
   , solvedFactory: any
+  , ngObjNeededModule?: string
   , ngObjOriginalName: string
   , ngObjOriginalType: string
   , ngObjBaseType: NgComponentBaseType
@@ -27,7 +28,7 @@ export interface ComponentRefDefinition{
 }
 
 export interface ModuleRefDefinition{
-  dynamicNgObj: Promise<any>
+  dynamicNgObj: () => Promise<any>
   , solvedNgObj: any
   , solvedFactory: any
   , ngObjOriginalName: string

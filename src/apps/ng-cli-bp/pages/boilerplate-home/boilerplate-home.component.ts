@@ -10,6 +10,7 @@ import { MetadataService } from 'src/services/metadata-service/angular11-meta';
   styleUrls: ['./boilerplate-home.component.css']
 })
 export class BoilerplateHomeComponent implements OnInit {
+  private countHooksOrder = 0;
   static __name__: string = "HomeComponent";
   headerEnabler: boolean = true;
   theLUrl: string = "";
@@ -18,6 +19,8 @@ export class BoilerplateHomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private locationService: Location,
   ) {
+    // 0)
+    console.log(`${++this.countHooksOrder} - BoilerplateHomeComponent constructor - `)
     // 1) this one gives strange results
     const theRUrl: string = this.activatedRoute.toString();
     // 2) this one works
@@ -26,7 +29,7 @@ export class BoilerplateHomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
+    console.log(`${++this.countHooksOrder} - ngOnInit - BoilerplateHomeComponent - `)
     if (this.metadataService) {
       this.metadataService.updateMetadata({
         title: 'Page home',
@@ -35,7 +38,34 @@ export class BoilerplateHomeComponent implements OnInit {
       console.log("metadata service scope test: ", this.metadataService.isRoot);
     }
 
+  }
 
+  ngOnChanges(): void {
+    console.log(`${++this.countHooksOrder} - ngOnChanges - BoilerplateHomeComponent - `)
+  }
+
+  ngDoCheck(): void {
+    console.log(`${++this.countHooksOrder} - ngDoCheck - BoilerplateHomeComponent - `)
+  }
+
+  ngAfterContentInit(): void {
+    console.log(`${++this.countHooksOrder} - ngAfterContentInit - BoilerplateHomeComponent - `)
+  }
+
+  ngAfterContentChecked(): void {
+    console.log(`${++this.countHooksOrder} - ngAfterContentChecked - BoilerplateHomeComponent - `)
+  }
+
+  ngAfterViewInit(): void {
+    console.log(`${++this.countHooksOrder} - ngAfterViewInit - BoilerplateHomeComponent - `)
+  }
+  
+  ngAfterViewChecked(): void {
+    console.log(`${++this.countHooksOrder} - ngAfterViewChecked - BoilerplateHomeComponent - `)
+  }
+  
+  ngOnDestroy(): void {
+    console.log(`${++this.countHooksOrder} - ngOnDestroy - BoilerplateHomeComponent - `)
   }
 
 }
